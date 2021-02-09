@@ -1,0 +1,105 @@
+.pickup {
+  border: 1.2px solid rgba(135, 135, 135, 0.5);
+  border-radius: 15px;
+  padding: 0 20px 0 20px;
+  margin: 40px 20px 0 20px;
+  h1 {
+    font-weight: 1000;
+    font-size: 16px;
+    color: rgb(233, 163, 163);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(150, 113, 113, 0.5);
+  }
+}
+.article__main {
+  display: flex;
+  margin-top: 20px;
+  // padding: 15px;
+  border-radius: 10px;
+}
+.article__title {
+  flex: 4;
+  margin-right: 5px;
+  p {
+    font-size: 13px;
+  }
+}
+
+.article__time {
+  opacity: 0.5;
+}
+
+.article__img {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  object-fit: cover;
+}
+
+// @media screen and (max-width: 800px) {
+//   .article__heading {
+//     display: flex;
+//     justify-content: space-between;
+//     margin-top: 20px;
+//     h3 {
+//       padding: 10px;
+//       font-weight: initial;
+//       margin: 20px 0 10px 10px;
+//     }
+//     p {
+//       margin: 20px 0 0 10px;
+//       padding: 10px 30px 0 10px;
+//       line-height: 47px;
+//       font-size: 14px;
+//       font-weight: normal;
+//       color: rgb(170, 170, 255);
+//     }
+//   }
+
+//   .article__main {
+//     display: flex;
+//     border: 1.2px solid rgba(135, 135, 135, 0.5);
+//     margin: 0 20px 20px 20px;
+//     padding: 15px;
+//     border-radius: 10px;
+//   }
+//   .article__title {
+//     flex: 4;
+//     margin-right: 5px;
+//   }
+
+//   .article__time {
+//     opacity: 0.5;
+//   }
+
+//   .article__img {
+//     object-fit: contain;
+//     width: 100%;
+//     border-radius: 5px;
+//     max-height: 100px;
+//     margin-right: 10px;
+//     flex: 1;
+//   }
+
+//   @media screen and (max-width: 600px) {
+//     .article__heading {
+//       display: inline;
+//       width: 90%;
+//       h1 {
+//         margin: 0;
+//         padding: 30px 0 0 30px;
+//       }
+//       p {
+//         margin: 0;
+//         font-size: 12px;
+//         text-align: right;
+//         line-height: 10px;
+//         padding: 0;
+//         padding-right: 30px;
+//       }
+//     }
+//     .article__img {
+//       max-height: 70px;
+//     }
+//   }
+// }

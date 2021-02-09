@@ -1,0 +1,42 @@
+p {
+  &.scss_test {
+    font-size: 3em;
+  }
+}
+
+.contents {
+  display: flex;
+  margin: 0 auto;
+}
+
+.main {
+  flex: 6;
+}
+
+.aside {
+  flex: 3;
+}
+
+.nav {
+  flex: 2;
+  position: fixed;
+}
+
+.blank {
+  flex: 2;
+}
+
+@media screen and (max-width: 800px) {
+  .nav {
+    display: none;
+  }
+  .blank {
+    display: none;
+  }
+  .contents {
+    flex-direction: column;
+  }
+  .aside {
+    display: none;
+  }
+}
