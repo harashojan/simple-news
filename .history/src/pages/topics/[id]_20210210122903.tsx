@@ -58,8 +58,8 @@ export async function getStaticProps({ params }) {
   const title = params.id;
 
   return {
-    props: { topicArticles, title },
-    revalidate: 60 ,
+    props: { weatherNews, pickupArticles, topicArticles, title },
+    revalidate: 60 * 60,
   };
 }
 

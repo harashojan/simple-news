@@ -48,7 +48,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+
   const topicRes = await fetch(
     `https://newsapi.org/v2/top-headlines?country=jp&category=${params.id}&country=jp&apiKey=a8bdc169bdcd495a8e0857f012c974e0`
   );
@@ -58,8 +58,8 @@ export async function getStaticProps({ params }) {
   const title = params.id;
 
   return {
-    props: { topicArticles, title },
-    revalidate: 60 ,
+    props: { weatherNews, pickupArticles, topicArticles, title },
+    revalidate: 60 * 60,
   };
 }
 
