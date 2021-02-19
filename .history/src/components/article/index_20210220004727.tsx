@@ -24,7 +24,7 @@ const Article: React.FC<Props> = ({ articles, title }) => {
                 <p>{article.title}</p>
                 <p className={styles.article__time}>
                   {time}
-                   時間前
+                 f 時間前
                 </p>
               </div>
               {article.urlToImage && (
