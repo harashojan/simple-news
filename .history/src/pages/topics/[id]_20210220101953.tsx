@@ -31,7 +31,7 @@ function Topic(props) {
           </nav>
         </div>
         <div className={styles.blank} />
-        <main className={styles.topicMain} >
+        <main className={styles.main} >
           <Article title={props.title} articles={props.topicArticles} />
         </main>
       </div>

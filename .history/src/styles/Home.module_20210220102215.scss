@@ -15,7 +15,6 @@ p {
 
 .topicMain {
   flex: 6;
-  margin-right: 10%;
 }
 
 .aside {
@@ -32,9 +31,6 @@ p {
 }
 
 @media screen and (max-width: 940px) {
-  .topicMain {
-    margin: 0;
-  }
   .nav {
     display: none;
   }

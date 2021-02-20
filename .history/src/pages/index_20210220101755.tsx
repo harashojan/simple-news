@@ -96,6 +96,6 @@ export const getStaticProps = async () => {
       covidArticles,
       pickupArticles,
     },
-    revalidate: 60 * 10,
+    revalidate: 60,
   };
 };

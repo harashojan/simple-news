@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "../weather-news/index.module.scss";
+import Link from "next/link";
 import Props from "../types";
 
 const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

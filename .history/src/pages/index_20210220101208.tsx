@@ -55,13 +55,9 @@ export default function Home(props) {
 }
 
 export const getStaticProps = async () => {
-
-  const sortBy = "popularity"
-  const pageSize = 5;
-
   // OpenWeatherMapの天気の情報を取得
   const weatherRes = await fetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=35.4122&lon=139.4130&units=metric&exclude=hourly,minutely&appid=${process.env.WEATHER_API_KEY}`
+    `https://api.openweathermap.org/data/2.5/onecall?lat=35.4122&lon=139.4130&units=metric&exclude=hourly,minutely&appid=${process.env.}`
   );
   const weatherJson = await weatherRes.json();
   const weatherNews = weatherJson;
@@ -74,17 +70,15 @@ export const getStaticProps = async () => {
   const topArticles = topJson?.articles;
 
   // NewsAPIのコロナウイルス記事の情報を取得
-  const covidKeyword = "covid-19"
   const covidRes = await fetch(
-    `https://newsapi.org/v2/everything?q=${covidKeyword}&language=jp&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${process.env.NEWS_API_KEY}`
+    `https://newsapi.org/v2/everything?q=covid-19&language=jp&sortBy=popularity&pageSize=5&apiKey=${process.env.NEWS_API_KEY}`
   );
   const covidJson = await covidRes.json();
   const covidArticles = covidJson?.articles;
 
   // NewsAPIのピックアップ記事の情報を取得
-  const pickupKeyword = "software";
   const pickupRes = await fetch(
-    `https://newsapi.org/v2/everything?q=${pickupKeyword}&language=jp&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${process.env.NEWS_API_KEY}`
+    `https://newsapi.org/v2/everything?q=software&language=jp&sortBy=popularity&pageSize=5&apiKey=${process.env.NEWS_API_KEY}`
   );
   const pickupJson = await pickupRes.json();
   const pickupArticles = pickupJson?.articles;
@@ -96,6 +90,6 @@ export const getStaticProps = async () => {
       covidArticles,
       pickupArticles,
     },
-    revalidate: 60 * 10,
+    revalidate: 60,
   };
 };

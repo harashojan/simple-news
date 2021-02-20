@@ -57,7 +57,6 @@ export default function Home(props) {
 export const getStaticProps = async () => {
 
   const sortBy = "popularity"
-  const pageSize = 5;
 
   // OpenWeatherMapの天気の情報を取得
   const weatherRes = await fetch(
@@ -66,6 +65,7 @@ export const getStaticProps = async () => {
   const weatherJson = await weatherRes.json();
   const weatherNews = weatherJson;
 
+  const pageSize = 5;
   // NewsAPIのトップ記事の情報を取得
   const topRes = await fetch(
     `https://newsapi.org/v2/top-headlines?country=jp&pageSize=10&apiKey=${process.env.NEWS_API_KEY}`
@@ -96,6 +96,6 @@ export const getStaticProps = async () => {
       covidArticles,
       pickupArticles,
     },
-    revalidate: 60 * 10,
+    revalidate: 60,
   };
 };

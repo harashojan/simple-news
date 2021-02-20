@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import {
   Article,
   Nav,
+  PickupArticle,
+  WeatherNews,
 } from "../../components/index";
 import MainLayout from "../../layouts/main/index";
 import { useSelector } from "react-redux";
@@ -31,7 +33,7 @@ function Topic(props) {
           </nav>
         </div>
         <div className={styles.blank} />
-        <main className={styles.topicMain} >
+        <main className={styles.main} style={{marginRight: "10%"}}>
           <Article title={props.title} articles={props.topicArticles} />
         </main>
       </div>
@@ -57,7 +59,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { topicArticles, title },
-    revalidate: 60 * 10,
+    revalidate: 60 * 10 ,
   };
 }
 

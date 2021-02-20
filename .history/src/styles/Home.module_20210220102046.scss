@@ -11,11 +11,7 @@ p {
 
 .main {
   flex: 6;
-}
-
-.topicMain {
-  flex: 6;
-  margin-right: 10%;
+  
 }
 
 .aside {
@@ -32,7 +28,7 @@ p {
 }
 
 @media screen and (max-width: 940px) {
-  .topicMain {
+  .main {
     margin: 0;
   }
   .nav {

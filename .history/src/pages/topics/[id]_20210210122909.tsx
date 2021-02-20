@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import {
   Article,
   Nav,
+  PickupArticle,
+  WeatherNews,
 } from "../../components/index";
 import MainLayout from "../../layouts/main/index";
 import { useSelector } from "react-redux";
@@ -31,7 +33,7 @@ function Topic(props) {
           </nav>
         </div>
         <div className={styles.blank} />
-        <main className={styles.topicMain} >
+        <main className={styles.main} style={{marginRight: "10%"}}>
           <Article title={props.title} articles={props.topicArticles} />
         </main>
       </div>
@@ -48,7 +50,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const topicRes = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=jp&category=${params.id}&country=jp&apiKey=${process.env.NEWS_API_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=jp&category=${params.id}&country=jp&apiKey=a8bdc169bdcd495a8e0857f012c974e0`
   );
   const topicJson = await topicRes.json();
   const topicArticles = await topicJson.articles;
@@ -57,7 +59,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { topicArticles, title },
-    revalidate: 60 * 10,
+    revalidate: 60 ,
   };
 }
 
